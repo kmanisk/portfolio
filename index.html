@@ -63,8 +63,13 @@
     }
   </script>
 
-  <!-- Lucide Icons -->
+  <!-- Lucide Icons with CDN Fallback -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    if (!window.lucide) {
+      document.write('<script src="https://cdn.jsdelivr.net/npm/lucide@latest/dist/umd/lucide.min.js"><\/script>');
+    }
+  </script>
 
   <!-- Custom Base Styles -->
   <style>
@@ -1390,11 +1395,18 @@
 
   <!-- ==================== JAVASCRIPT LOGIC ==================== -->
   <script>
-    // Initialize Lucide Icons
+    // Safe Lucide Icons Initialization
+    function refreshIcons() {
+      if (window.lucide && typeof window.lucide.createIcons === 'function') {
+        window.lucide.createIcons();
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
-      lucide.createIcons();
+      refreshIcons();
       initScrollSpy();
     });
+    window.addEventListener('load', refreshIcons);
 
     // Mobile Navigation Toggle
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
