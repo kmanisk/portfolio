@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Kumar Manisk Gaurav | Software Developer &amp; AI Enthusiast</title>
+  <meta name="description" content="Portfolio of Kumar Manisk Gaurav - Software Developer specializing in scalable web platforms, high-throughput REST APIs, and intelligent data systems." />
+  <meta name="keywords" content="Kumar Manisk Gaurav, Software Developer, Full-Stack Developer, AI, Python, React, Data Analytics, Portfolio" />
+  <meta name="author" content="Kumar Manisk Gaurav" />
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kumar Manisk Gaurav | Software Developer Portfolio" />
+  <meta property="og:description" content="Building scalable web platforms, high-throughput REST APIs, and intelligent data systems." />
+  <meta property="og:url" content="https://github.com/kumar-manisk" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233b82f6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polygon points='12 2 2 7 12 12 22 7 12 2'/><polyline points='2 17 12 22 22 17'/><polyline points='2 12 12 17 22 12'/></svg>" type="image/svg+xml" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a',
+            }
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Base Styles -->
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0b0f19;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #3b82f6;
+    }
+
+    /* Subtle backdrop grid pattern */
+    .bg-grid-pattern {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+    
+    .glow-blob {
+      position: absolute;
+      filter: blur(120px);
+      opacity: 0.15;
+      pointer-events: none;
+      z-index: 0;
+      border-radius: 9999px;
+    }
+
+    /* Glassmorphism */
+    .glass-panel {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+    }
+    .glass-panel-interactive {
+      background: rgba(17, 24, 39, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .glass-panel-interactive:hover {
+      border-color: rgba(59, 130, 246, 0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px -10px rgba(59, 130, 246, 0.15);
+    }
+
+    /* Code block header */
+    .terminal-header {
+      background: rgba(15, 23, 42, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    /* Selection Color */
+    ::selection {
+      background-color: #3b82f6;
+      color: #ffffff;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 font-sans antialiased selection:bg-brand-500 selection:text-white relative min-h-screen overflow-x-hidden">
+
+  <!-- Background Ambience Glows -->
+  <div class="fixed inset-0 bg-grid-pattern pointer-events-none z-0"></div>
+  <div class="glow-blob bg-blue-600 w-[600px] h-[600px] -top-48 -left-48"></div>
+  <div class="glow-blob bg-indigo-600 w-[500px] h-[500px] top-1/3 -right-48"></div>
+  <div class="glow-blob bg-sky-600 w-[550px] h-[550px] -bottom-48 left-1/4"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
+
+  <!-- ==================== STICKY NAVIGATION ==================== -->
+  <header id="navbar" class="sticky top-0 z-40 w-full transition-all duration-300 border-b border-slate-800/80 bg-slate-950/80 backdrop-blur-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 md:h-20">
+        
+        <!-- Logo -->
+        <a href="#hero" class="flex items-center gap-3 group focus:outline-none focus:ring-2 focus:ring-brand-500 rounded-lg p-1" aria-label="Kumar Manisk Gaurav Portfolio Home">
+          <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-600 flex items-center justify-center text-white font-mono font-bold text-lg shadow-lg shadow-brand-500/20 group-hover:scale-105 transition-transform duration-200">
+            &lt;KM/&gt;
+          </div>
+          <div class="flex flex-col">
+            <span class="font-bold text-base tracking-tight text-white group-hover:text-brand-400 transition-colors">
+              Kumar Manisk
+            </span>
+            <span class="text-xs text-slate-400 font-mono flex items-center gap-1.5">
+              <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+              Available for roles
+            </span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden md:flex items-center gap-1 lg:gap-2">
+          <a href="#about" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">About</a>
+          <a href="#skills" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Skills</a>
+          <a href="#experience" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Experience</a>
+          <a href="#projects" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Projects</a>
+          <a href="#contact" class="nav-link px-3.5 py-2 rounded-lg text-sm font-medium text-slate-300 hover:text-white hover:bg-slate-800/60 transition-colors">Contact</a>
+        </nav>
+
+        <!-- Right Header Actions -->
+        <div class="hidden md:flex items-center gap-3">
+          <!-- Resume Modal Button -->
+          <button id="resume-btn" onclick="openResumeModal()" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-slate-200 bg-slate-800/80 hover:bg-slate-800 hover:text-white border border-slate-700/80 hover:border-slate-600 rounded-lg shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-brand-500" aria-label="View Resume">
+            <i data-lucide="file-text" class="w-4 h-4 text-brand-400"></i>
+            <span>Resume</span>
+          </button>
+
+          <!-- Direct CTA -->
+          <a href="#contact" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 rounded-lg shadow-md shadow-brand-600/25 transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-400">
+            <span>Hire Me</span>
+            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          </a>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <div class="flex md:hidden items-center gap-2">
+          <button id="mobile-menu-btn" type="button" class="p-2.5 rounded-lg text-slate-400 hover:text-white hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500" aria-expanded="false" aria-label="Toggle navigation menu">
+            <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+            <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-slate-800 bg-slate-950/95 backdrop-blur-xl px-4 pt-3 pb-6 space-y-2">
+      <a href="#about" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-white transition-colors">About</a>
+      <a href="#skills" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-white transition-colors">Skills</a>
+      <a href="#experience" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-white transition-colors">Experience</a>
+      <a href="#projects" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-white transition-colors">Projects</a>
+      <a href="#contact" class="mobile-nav-link block px-3 py-2.5 rounded-lg text-base font-medium text-slate-200 hover:bg-slate-800 hover:text-white transition-colors">Contact</a>
+      
+      <div class="pt-4 border-t border-slate-800 flex flex-col gap-2.5">
+        <button onclick="openResumeModal()" class="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-medium text-slate-200 bg-slate-800 hover:bg-slate-700 rounded-lg border border-slate-700">
+          <i data-lucide="file-text" class="w-4 h-4 text-brand-400"></i>
+          <span>View Resume</span>
+        </button>
+        <a href="#contact" class="mobile-nav-link w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 rounded-lg">
+          <span>Get in Touch</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="relative z-10">
+    
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="pt-12 pb-20 md:pt-20 md:pb-28 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Hero Text Content -->
+        <div class="lg:col-span-7 space-y-6 text-left">
+          
+          <!-- Status Pill -->
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs sm:text-sm font-mono text-slate-300 shadow-inner">
+            <span class="flex h-2 w-2 relative">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
+            </span>
+            <span>Software Engineer &amp; ML Practitioner</span>
+          </div>
+
+          <!-- Main Headline -->
+          <div class="space-y-2">
+            <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
+              Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-brand-400 to-indigo-300">Kumar Manisk Gaurav</span>
+            </h1>
+            <p class="text-xl sm:text-2xl font-semibold text-slate-300 font-mono">
+              Software Developer <span class="text-brand-500">|</span> AI &amp; Full-Stack Enthusiast
+            </p>
+          </div>
+
+          <!-- Tagline & Description -->
+          <p class="text-base sm:text-lg text-slate-400 leading-relaxed max-w-2xl">
+            Building <span class="text-slate-200 font-medium">scalable web platforms</span>, <span class="text-slate-200 font-medium">high-throughput REST APIs</span>, and <span class="text-slate-200 font-medium">intelligent data systems</span>. Passionate about turning complex real-world data into high-performance, user-centric software.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center gap-4 pt-2">
+            <a href="#projects" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-600/30 hover:shadow-brand-600/45 transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-brand-400">
+              <i data-lucide="layers" class="w-4 h-4"></i>
+              <span>View Projects</span>
+            </a>
+            
+            <a href="#contact" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-slate-200 bg-slate-900/90 hover:bg-slate-800 hover:text-white border border-slate-800 hover:border-slate-700 transition-all transform hover:-translate-y-0.5 focus:outline-none focus:ring-2 focus:ring-slate-700">
+              <i data-lucide="mail" class="w-4 h-4 text-brand-400"></i>
+              <span>Contact Me</span>
+            </a>
+
+            <button onclick="copyEmailToClipboard()" class="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl font-medium text-xs sm:text-sm text-slate-400 bg-slate-900/60 hover:bg-slate-800/80 hover:text-slate-200 border border-slate-800/80 transition-all" title="Click to copy email address">
+              <i data-lucide="copy" class="w-4 h-4 text-slate-400"></i>
+              <span id="copy-email-text">Copy Email</span>
+            </button>
+          </div>
+
+          <!-- Social Quick Links & Verification -->
+          <div class="pt-4 flex flex-wrap items-center gap-6 text-sm text-slate-400 border-t border-slate-800/80">
+            <span class="text-xs uppercase tracking-wider font-semibold text-slate-500">Connect:</span>
+            
+            <a href="https://github.com/kumar-manisk" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-slate-300 hover:text-brand-400 transition-colors group">
+              <i data-lucide="github" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+              <span>GitHub</span>
+            </a>
+
+            <a href="https://linkedin.com/in/kumar-manisk" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 text-slate-300 hover:text-brand-400 transition-colors group">
+              <i data-lucide="linkedin" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+              <span>LinkedIn</span>
+            </a>
+
+            <a href="mailto:maniskgaurav@gmail.com" class="flex items-center gap-2 text-slate-300 hover:text-brand-400 transition-colors group">
+              <i data-lucide="send" class="w-4 h-4 group-hover:scale-110 transition-transform"></i>
+              <span>maniskgaurav@gmail.com</span>
+            </a>
+          </div>
+
+        </div>
+
+        <!-- Hero Interactive Code/Terminal Showcase -->
+        <div class="lg:col-span-5">
+          <div class="glass-panel rounded-2xl overflow-hidden shadow-2xl border border-slate-800">
+            <!-- Terminal Header -->
+            <div class="terminal-header px-4 py-3 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-amber-500/80"></div>
+                <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
+                <span class="ml-2 text-xs font-mono text-slate-400">developer@manisk: ~/profile</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="text-[11px] font-mono px-2 py-0.5 rounded bg-slate-800 text-slate-400 border border-slate-700">python3</span>
+              </div>
+            </div>
+
+            <!-- Terminal Body -->
+            <div class="p-5 font-mono text-xs sm:text-sm text-slate-300 bg-slate-950/90 leading-relaxed overflow-x-auto">
+              <div class="text-slate-500 mb-2"># Developer Identity Matrix</div>
+              <div>
+                <span class="text-brand-400 font-semibold">class</span> 
+                <span class="text-yellow-300 font-semibold">SoftwareDeveloper</span>:
+              </div>
+              <div class="pl-4 text-slate-300">
+                <div><span class="text-indigo-400">def</span> <span class="text-blue-300">__init__</span>(self):</div>
+                <div class="pl-4 space-y-1">
+                  <div>self.name = <span class="text-emerald-400">"Kumar Manisk Gaurav"</span></div>
+                  <div>self.focus = [<span class="text-emerald-400">"Full-Stack"</span>, <span class="text-emerald-400">"AI/ML Systems"</span>, <span class="text-emerald-400">"APIs"</span>]</div>
+                  <div>self.languages = [<span class="text-emerald-400">"Python"</span>, <span class="text-emerald-400">"Java"</span>, <span class="text-emerald-400">"JavaScript"</span>, <span class="text-emerald-400">"SQL"</span>, <span class="text-emerald-400">"C++"</span>]</div>
+                  <div>self.status = <span class="text-emerald-400">"Building &amp; Scaling"</span></div>
+                </div>
+                <div class="mt-2"><span class="text-indigo-400">def</span> <span class="text-blue-300">code_philosophy</span>(self):</div>
+                <div class="pl-4">
+                  <span class="text-brand-400">return</span> <span class="text-emerald-400">"High-throughput, clean architecture &amp; data-driven decisions."</span>
+                </div>
+              </div>
+
+              <!-- Live Execution Box -->
+              <div class="mt-4 pt-3 border-t border-slate-800/80 text-xs">
+                <div class="flex items-center justify-between text-slate-400 mb-1">
+                  <span>Output Preview:</span>
+                  <span class="text-emerald-400 flex items-center gap-1 font-mono text-[10px]">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-ping"></span>
+                    Ready for Production
+                  </span>
+                </div>
+                <div class="p-2.5 rounded-lg bg-slate-900/90 text-slate-300 border border-slate-800 text-[11px] font-mono">
+                  &gt; developer.deliver_impact()<br/>
+                  <span class="text-brand-300">✓ 15k+ records analyzed</span> | <span class="text-brand-300">✓ &lt;180ms latency APIs</span> | <span class="text-brand-300">✓ 88% recommendation score</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Quick Metrics Ribbon -->
+      <div class="mt-14 grid grid-cols-2 md:grid-cols-4 gap-4">
+        
+        <div class="glass-panel p-4 rounded-xl border border-slate-800/80 flex items-center gap-3">
+          <div class="p-2.5 rounded-lg bg-brand-500/10 text-brand-400 border border-brand-500/20">
+            <i data-lucide="database" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold font-mono text-white">15K+</div>
+            <div class="text-xs text-slate-400 font-medium">Records Processed</div>
+          </div>
+        </div>
+
+        <div class="glass-panel p-4 rounded-xl border border-slate-800/80 flex items-center gap-3">
+          <div class="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+            <i data-lucide="zap" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold font-mono text-white">&lt;180ms</div>
+            <div class="text-xs text-slate-400 font-medium">API Response Times</div>
+          </div>
+        </div>
+
+        <div class="glass-panel p-4 rounded-xl border border-slate-800/80 flex items-center gap-3">
+          <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+            <i data-lucide="sparkles" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold font-mono text-white">88%</div>
+            <div class="text-xs text-slate-400 font-medium">ML Model Relevance</div>
+          </div>
+        </div>
+
+        <div class="glass-panel p-4 rounded-xl border border-slate-800/80 flex items-center gap-3">
+          <div class="p-2.5 rounded-lg bg-sky-500/10 text-sky-400 border border-sky-500/20">
+            <i data-lucide="trending-up" class="w-5 h-5"></i>
+          </div>
+          <div>
+            <div class="text-xl sm:text-2xl font-bold font-mono text-white">+24%</div>
+            <div class="text-xs text-slate-400 font-medium">Engagement Boost</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="py-16 md:py-24 border-t border-slate-800/80 bg-slate-950/50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono mb-3">
+            <i data-lucide="user" class="w-3.5 h-3.5"></i>
+            <span>BACKGROUND &amp; PHILOSOPHY</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Engineering with Purpose &amp; Precision</h2>
+          <p class="mt-3 text-slate-400 text-base sm:text-lg">
+            A developer who bridges backend reliability, machine learning insights, and modern frontend responsiveness.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+          
+          <!-- Narrative Bio -->
+          <div class="lg:col-span-7 glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800 flex flex-col justify-between space-y-6">
+            <div class="space-y-4 text-slate-300 leading-relaxed text-sm sm:text-base">
+              <p>
+                I am a passionate <strong class="text-white">Software Developer</strong> with a strong foundation in computer science, system design, and applied machine learning. My engineering approach is driven by performance, maintainability, and user-centric problem-solving.
+              </p>
+              <p>
+                From architecting <strong class="text-white">high-throughput RESTful services</strong> in Python and Node.js to constructing <strong class="text-white">recommendation algorithms</strong> and real-time scrapers, I thrive in fast-paced environments where clean code directly translates into tangible business value.
+              </p>
+              <p>
+                Having led technical initiatives during <strong class="text-white">Mood Indigo (IIT Bombay)</strong> and optimized analytics pipelines at <strong class="text-white">TechnoHacks Solutions</strong>, I take pride in delivering robust architectures with sub-200ms latency and high analytical accuracy.
+              </p>
+            </div>
+
+            <!-- Quick Specs Row -->
+            <div class="pt-6 border-t border-slate-800 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs font-mono text-slate-300">
+              <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+                <span class="text-slate-500 block">Location</span>
+                <span class="font-semibold text-white">India (IST / UTC+5:30)</span>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800">
+                <span class="text-slate-500 block">Focus Areas</span>
+                <span class="font-semibold text-white">Full-Stack &amp; AI</span>
+              </div>
+              <div class="p-3 rounded-lg bg-slate-900/80 border border-slate-800 col-span-2 sm:col-span-1">
+                <span class="text-slate-500 block">Education</span>
+                <span class="font-semibold text-white">Computer Science</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Architectural Pillars Cards -->
+          <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            
+            <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-brand-500/10 border border-brand-500/20 text-brand-400 flex items-center justify-center mb-3">
+                  <i data-lucide="server" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-semibold text-white mb-1">Backend &amp; API Design</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Building modular RESTful APIs, optimized relational databases, and low-latency microservices.
+                </p>
+              </div>
+              <div class="mt-3 text-[11px] font-mono text-brand-300">Python · Node.js · SQL · REST</div>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-3">
+                  <i data-lucide="brain-circuit" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-semibold text-white mb-1">Applied AI &amp; ML</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Crafting recommendation systems, user behavior analysis models, and intelligent data pipelines.
+                </p>
+              </div>
+              <div class="mt-3 text-[11px] font-mono text-indigo-300">Scikit-learn · Pandas · NumPy</div>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-sky-500/10 border border-sky-500/20 text-sky-400 flex items-center justify-center mb-3">
+                  <i data-lucide="layout" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-semibold text-white mb-1">Modern UI &amp; Web</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Engineering fluid React applications with seamless state management, accessibility, and speed.
+                </p>
+              </div>
+              <div class="mt-3 text-[11px] font-mono text-sky-300">React.js · Tailwind · ES6+</div>
+            </div>
+
+            <div class="glass-panel p-5 rounded-xl border border-slate-800 flex flex-col justify-between">
+              <div>
+                <div class="w-10 h-10 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3">
+                  <i data-lucide="git-merge" class="w-5 h-5"></i>
+                </div>
+                <h3 class="text-base font-semibold text-white mb-1">Engineering Rigor</h3>
+                <p class="text-xs text-slate-400 leading-relaxed">
+                  Clean OOP practices, DSA mastery, strict SDLC protocols, and automated version control pipelines.
+                </p>
+              </div>
+              <div class="mt-3 text-[11px] font-mono text-emerald-300">Git · DSA · CI/CD · Postman</div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section id="skills" class="py-16 md:py-24 border-t border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono mb-3">
+            <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+            <span>TECHNICAL PROFICIENCY</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Skills &amp; Technology Stack</h2>
+          <p class="mt-3 text-slate-400 text-base sm:text-lg">
+            A battle-tested repertoire across programming languages, backend frameworks, data science libraries, and core engineering concepts.
+          </p>
+
+          <!-- Interactive Filter Tabs -->
+          <div class="flex flex-wrap justify-center items-center gap-2 mt-8" id="skills-filter-container">
+            <button onclick="filterSkills('all')" class="skill-tab-btn active px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all bg-brand-600 text-white shadow-md shadow-brand-600/20" data-category="all">
+              All Skills
+            </button>
+            <button onclick="filterSkills('languages')" class="skill-tab-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-lg text-slate-400 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 transition-all" data-category="languages">
+              Languages
+            </button>
+            <button onclick="filterSkills('backend')" class="skill-tab-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-lg text-slate-400 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 transition-all" data-category="backend">
+              Web &amp; Backend
+            </button>
+            <button onclick="filterSkills('ai')" class="skill-tab-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-lg text-slate-400 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 transition-all" data-category="ai">
+              AI &amp; Analytics
+            </button>
+            <button onclick="filterSkills('tools')" class="skill-tab-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-lg text-slate-400 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 transition-all" data-category="tools">
+              Tools &amp; Core
+            </button>
+          </div>
+        </div>
+
+        <!-- Skills Grid Display -->
+        <div id="skills-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          
+          <!-- Category 1: Languages -->
+          <div class="skill-category-card glass-panel p-6 rounded-2xl border border-slate-800" data-cat="languages">
+            <div class="flex items-center gap-3 mb-5 pb-3 border-b border-slate-800">
+              <div class="p-2.5 rounded-lg bg-blue-500/10 text-brand-400 border border-blue-500/20">
+                <i data-lucide="code" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">Languages</h3>
+                <span class="text-xs text-slate-400 font-mono">5 Core Languages</span>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Python</span>
+                <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/50">Advanced</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Java</span>
+                <span class="text-xs font-mono text-brand-400 bg-brand-950/60 px-2 py-0.5 rounded border border-brand-800/50">Proficient</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">JavaScript (ES6+)</span>
+                <span class="text-xs font-mono text-yellow-400 bg-yellow-950/60 px-2 py-0.5 rounded border border-yellow-800/50">Proficient</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">SQL</span>
+                <span class="text-xs font-mono text-cyan-400 bg-cyan-950/60 px-2 py-0.5 rounded border border-cyan-800/50">Advanced</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">C / C++</span>
+                <span class="text-xs font-mono text-slate-400 bg-slate-800/60 px-2 py-0.5 rounded border border-slate-700">Competent</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 2: Web & Backend -->
+          <div class="skill-category-card glass-panel p-6 rounded-2xl border border-slate-800" data-cat="backend">
+            <div class="flex items-center gap-3 mb-5 pb-3 border-b border-slate-800">
+              <div class="p-2.5 rounded-lg bg-indigo-500/10 text-indigo-400 border border-indigo-500/20">
+                <i data-lucide="layers" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">Web &amp; Backend</h3>
+                <span class="text-xs text-slate-400 font-mono">Frameworks &amp; APIs</span>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">React.js</span>
+                <span class="text-xs font-mono text-sky-400 bg-sky-950/60 px-2 py-0.5 rounded border border-sky-800/50">Frontend UI</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">RESTful APIs</span>
+                <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/50">Design &amp; Auth</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Node.js</span>
+                <span class="text-xs font-mono text-green-400 bg-green-950/60 px-2 py-0.5 rounded border border-green-800/50">Runtime</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">HTML5 / CSS3</span>
+                <span class="text-xs font-mono text-orange-400 bg-orange-950/60 px-2 py-0.5 rounded border border-orange-800/50">Responsive</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Microservices</span>
+                <span class="text-xs font-mono text-purple-400 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-800/50">Architecture</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 3: AI & Analytics -->
+          <div class="skill-category-card glass-panel p-6 rounded-2xl border border-slate-800" data-cat="ai">
+            <div class="flex items-center gap-3 mb-5 pb-3 border-b border-slate-800">
+              <div class="p-2.5 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
+                <i data-lucide="sparkles" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">AI &amp; Analytics</h3>
+                <span class="text-xs text-slate-400 font-mono">ML &amp; Data Science</span>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Recommendation Systems</span>
+                <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/50">Collab Filter</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Applied Behavior Analysis</span>
+                <span class="text-xs font-mono text-indigo-400 bg-indigo-950/60 px-2 py-0.5 rounded border border-indigo-800/50">Modeling</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Pandas &amp; NumPy</span>
+                <span class="text-xs font-mono text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded border border-blue-800/50">Wrangling</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Matplotlib / Seaborn</span>
+                <span class="text-xs font-mono text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/50">Visuals</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Scikit-learn</span>
+                <span class="text-xs font-mono text-teal-400 bg-teal-950/60 px-2 py-0.5 rounded border border-teal-800/50">ML Models</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category 4: Tools & Core -->
+          <div class="skill-category-card glass-panel p-6 rounded-2xl border border-slate-800" data-cat="tools">
+            <div class="flex items-center gap-3 mb-5 pb-3 border-b border-slate-800">
+              <div class="p-2.5 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
+                <i data-lucide="wrench" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <h3 class="font-bold text-white text-base">Tools &amp; Core</h3>
+                <span class="text-xs text-slate-400 font-mono">DevOps &amp; CS Core</span>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Git &amp; GitHub</span>
+                <span class="text-xs font-mono text-orange-400 bg-orange-950/60 px-2 py-0.5 rounded border border-orange-800/50">CI/CD &amp; VCS</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">MySQL &amp; SQLite</span>
+                <span class="text-xs font-mono text-blue-400 bg-blue-950/60 px-2 py-0.5 rounded border border-blue-800/50">RDBMS</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">Postman</span>
+                <span class="text-xs font-mono text-amber-400 bg-amber-950/60 px-2 py-0.5 rounded border border-amber-800/50">API Testing</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">DSA &amp; OOP</span>
+                <span class="text-xs font-mono text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-800/50">CS Core</span>
+              </div>
+              <div class="skill-item flex items-center justify-between p-2.5 rounded-lg bg-slate-900/80 border border-slate-800 hover:border-slate-700 transition-colors">
+                <span class="text-sm font-medium text-slate-200">SDLC &amp; Agile</span>
+                <span class="text-xs font-mono text-purple-400 bg-purple-950/60 px-2 py-0.5 rounded border border-purple-800/50">Methodology</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== EXPERIENCE SECTION ==================== -->
+    <section id="experience" class="py-16 md:py-24 border-t border-slate-800/80 bg-slate-950/40">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono mb-3">
+            <i data-lucide="briefcase" class="w-3.5 h-3.5"></i>
+            <span>CAREER TRACK RECORD</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Work Experience &amp; Leadership</h2>
+          <p class="mt-3 text-slate-400 text-base sm:text-lg">
+            Proven history of driving measurable performance gains, leading AI strategy, and deploying scalable analytics pipelines.
+          </p>
+        </div>
+
+        <!-- Timeline Container -->
+        <div class="max-w-4xl mx-auto relative">
+          <!-- Central Line -->
+          <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-500 via-indigo-500 to-slate-800 -translate-x-1/2 hidden sm:block"></div>
+
+          <div class="space-y-12">
+            
+            <!-- Timeline Item 1 -->
+            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+              <!-- Dot Indicator -->
+              <div class="hidden sm:flex absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-950 border-2 border-brand-500 items-center justify-center z-10 group-hover:scale-125 transition-transform duration-200 shadow-lg shadow-brand-500/30">
+                <div class="w-2.5 h-2.5 rounded-full bg-brand-400 animate-pulse"></div>
+              </div>
+
+              <!-- Left Side (Date Badge on Desktop) -->
+              <div class="md:w-1/2 md:pr-12 md:text-right mb-2 md:mb-0">
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold bg-brand-950/80 text-brand-400 border border-brand-800/60 shadow-sm">
+                  Jun 2026 – Jul 2026
+                </span>
+                <div class="text-xs text-slate-400 mt-1 font-mono">Full-Time Internship</div>
+              </div>
+
+              <!-- Right Side (Card Content) -->
+              <div class="md:w-1/2 md:pl-12 w-full">
+                <div class="glass-panel-interactive p-6 rounded-2xl border border-slate-800">
+                  <div class="flex items-start justify-between gap-2 mb-2">
+                    <div>
+                      <h3 class="text-lg font-bold text-white">Data Analytics Intern</h3>
+                      <p class="text-sm font-medium text-brand-400">TechnoHacks Solutions Pvt. Ltd.</p>
+                    </div>
+                    <span class="p-2 rounded-lg bg-slate-900 text-slate-400 border border-slate-800">
+                      <i data-lucide="bar-chart-3" class="w-4 h-4 text-brand-400"></i>
+                    </span>
+                  </div>
+
+                  <ul class="mt-4 space-y-2.5 text-sm text-slate-300">
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                      <span>Ingested, cleaned, and processed <strong class="text-white">15,000+ structured records</strong> with automated validation routines.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                      <span>Constructed <strong class="text-white">12+ interactive visualization dashboards</strong> delivering actionable business intelligence.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                      <span>Cut periodic reporting cycles by <strong class="text-white">35%</strong> by optimizing data transformation pipelines.</span>
+                    </li>
+                  </ul>
+
+                  <!-- Tech Badges -->
+                  <div class="mt-5 pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+                    <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">Python</span>
+                    <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">Pandas</span>
+                    <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">NumPy</span>
+                    <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">Matplotlib</span>
+                    <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">EDA</span>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Timeline Item 2 -->
+            <div class="relative flex flex-col md:flex-row items-start md:items-center group">
+              <!-- Dot Indicator -->
+              <div class="hidden sm:flex absolute left-4 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-slate-950 border-2 border-indigo-500 items-center justify-center z-10 group-hover:scale-125 transition-transform duration-200 shadow-lg shadow-indigo-500/30">
+                <div class="w-2.5 h-2.5 rounded-full bg-indigo-400"></div>
+              </div>
+
+              <!-- Left Side (Card on Desktop) -->
+              <div class="md:w-1/2 md:pr-12 w-full order-2 md:order-1">
+                <div class="glass-panel-interactive p-6 rounded-2xl border border-slate-800">
+                  <div class="flex items-start justify-between gap-2 mb-2">
+                    <div>
+                      <h3 class="text-lg font-bold text-white">AI &amp; Strategy Intern (Team Lead)</h3>
+                      <p class="text-sm font-medium text-indigo-400">Mood Indigo, IIT Bombay</p>
+                    </div>
+                    <span class="p-2 rounded-lg bg-slate-900 text-slate-400 border border-slate-800">
+                      <i data-lucide="award" class="w-4 h-4 text-indigo-400"></i>
+                    </span>
+                  </div>
+
+                  <ul class="mt-4 space-y-2.5 text-sm text-slate-300">
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                      <span>Architected a machine learning recommendation system for event scheduling &amp; attendee preferences.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                      <span>Analyzed behavioral patterns across <strong class="text-white">45,000+ festival attendees</strong> to optimize crowd logistics.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                      <i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400 shrink-0 mt-0.5"></i>
+                      <span>Boosted overall participant session engagement by <strong class="text-white">24%</strong> via personalized recommendation feeds.</span>
+                    </li>
+                  </ul>
+
+                  <!-- Tech Badges -->
+                  <div class="mt-5 pt-4 border-t border-slate-800 flex flex-wrap gap-1.5">
+                    <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">Scikit-learn</span>
+                    <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">Collaborative Filtering</span>
+                    <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">Behavioral Modeling</span>
+                    <span class="px-2.5 py-0.5 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">Leadership</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Right Side (Date Badge on Desktop) -->
+              <div class="md:w-1/2 md:pl-12 mb-2 md:mb-0 order-1 md:order-2">
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold bg-indigo-950/80 text-indigo-400 border border-indigo-800/60 shadow-sm">
+                  Jan 2024 – Feb 2024
+                </span>
+                <div class="text-xs text-slate-400 mt-1 font-mono">Asia's Largest College Cultural Festival</div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== FEATURED PROJECTS SECTION ==================== -->
+    <section id="projects" class="py-16 md:py-24 border-t border-slate-800/80">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+          <div>
+            <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono mb-3">
+              <i data-lucide="folder-git-2" class="w-3.5 h-3.5"></i>
+              <span>FEATURED PORTFOLIO</span>
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Production &amp; Engineering Projects</h2>
+            <p class="mt-2 text-slate-400 text-base max-w-xl">
+              Highlighting real-world applications featuring high performance, clean API contracts, and applied machine learning.
+            </p>
+          </div>
+
+          <a href="https://github.com/kumar-manisk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-sm font-medium text-brand-400 hover:text-brand-300 transition-colors group">
+            <span>Explore all repositories on GitHub</span>
+            <i data-lucide="external-link" class="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"></i>
+          </a>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+          
+          <!-- PROJECT CARD 1 -->
+          <div class="glass-panel-interactive rounded-2xl border border-slate-800 flex flex-col justify-between overflow-hidden group">
+            
+            <div>
+              <!-- Visual Mockup / Card Banner -->
+              <div class="h-48 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-950/60 p-5 relative border-b border-slate-800 flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-brand-500/20 border border-brand-500/30 text-brand-300 text-xs font-mono">
+                    <i data-lucide="activity" class="w-3.5 h-3.5 text-brand-400"></i>
+                    &lt;180ms Latency
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <button onclick="openProjectModal('project-1')" class="p-2 rounded-lg bg-slate-900/90 text-slate-300 hover:text-white border border-slate-700/80 hover:bg-slate-800 transition-colors" title="Quick View">
+                      <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Abstract UI Representation -->
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 shadow-inner">
+                  <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1.5">
+                    <span>Tracker Daemon [Active]</span>
+                    <span class="text-emerald-400 font-semibold">200 OK</span>
+                  </div>
+                  <div class="w-full bg-slate-800 rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-brand-500 h-1.5 rounded-full w-4/5 animate-pulse"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content Area -->
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white group-hover:text-brand-400 transition-colors">
+                  E-Commerce Price Tracker &amp; Automated Alert System
+                </h3>
+                
+                <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+                  Full-stack price monitoring engine with real-time web scrapers, REST API, dynamic React UI, and background alerts with &lt;180ms response times.
+                </p>
+
+                <!-- Key Feature Highlights -->
+                <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Real-time multi-threaded web scrapers</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Background cron dispatch for instant alerts</span>
+                  </div>
+                </div>
+
+                <!-- Tech Tags -->
+                <div class="mt-6 flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-brand-300 border border-slate-800">Python</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-sky-300 border border-slate-800">React.js</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">REST API</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">SQLite</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-slate-300 border border-slate-800">BeautifulSoup</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Buttons -->
+            <div class="p-6 pt-0 flex items-center gap-3">
+              <a href="https://github.com/kumar-manisk" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>Source Code</span>
+              </a>
+              <button onclick="triggerDemoToast('E-Commerce Price Tracker')" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-md shadow-brand-600/20 transition-colors">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+                <span>Live Demo</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- PROJECT CARD 2 -->
+          <div class="glass-panel-interactive rounded-2xl border border-slate-800 flex flex-col justify-between overflow-hidden group">
+            
+            <div>
+              <!-- Visual Mockup / Card Banner -->
+              <div class="h-48 bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950/60 p-5 relative border-b border-slate-800 flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-indigo-500/20 border border-indigo-500/30 text-indigo-300 text-xs font-mono">
+                    <i data-lucide="brain" class="w-3.5 h-3.5 text-indigo-400"></i>
+                    88% Relevance
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <button onclick="openProjectModal('project-2')" class="p-2 rounded-lg bg-slate-900/90 text-slate-300 hover:text-white border border-slate-700/80 hover:bg-slate-800 transition-colors" title="Quick View">
+                      <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Abstract UI Representation -->
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 shadow-inner">
+                  <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1.5">
+                    <span>Collaborative Vector Space</span>
+                    <span class="text-indigo-400 font-semibold">k-NN Matrix</span>
+                  </div>
+                  <div class="flex items-center gap-1.5 text-xs text-slate-300 font-mono">
+                    <span class="px-2 py-0.5 rounded bg-indigo-950 border border-indigo-800 text-[10px]">User Vector</span>
+                    <span class="text-slate-500">⇄</span>
+                    <span class="px-2 py-0.5 rounded bg-slate-900 border border-slate-800 text-[10px]">Item Similarity</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content Area -->
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white group-hover:text-indigo-400 transition-colors">
+                  AI Movie Recommendation System
+                </h3>
+                
+                <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+                  Machine learning recommendation engine built during Mood Indigo IIT Bombay utilizing user behavior modeling and collaborative filtering with 88% relevance.
+                </p>
+
+                <!-- Key Feature Highlights -->
+                <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Matrix factorization &amp; cosine similarity</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Tested on 45,000+ real event behavioral trends</span>
+                  </div>
+                </div>
+
+                <!-- Tech Tags -->
+                <div class="mt-6 flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-brand-300 border border-slate-800">Python</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-indigo-300 border border-slate-800">Scikit-learn</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-blue-300 border border-slate-800">Pandas</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-purple-300 border border-slate-800">Behavioral Analysis</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Buttons -->
+            <div class="p-6 pt-0 flex items-center gap-3">
+              <a href="https://github.com/kumar-manisk" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>View Code</span>
+              </a>
+              <button onclick="openProjectModal('project-2')" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-indigo-600 hover:bg-indigo-500 shadow-md shadow-indigo-600/20 transition-colors">
+                <i data-lucide="file-text" class="w-4 h-4"></i>
+                <span>Case Study</span>
+              </button>
+            </div>
+
+          </div>
+
+          <!-- PROJECT CARD 3 -->
+          <div class="glass-panel-interactive rounded-2xl border border-slate-800 flex flex-col justify-between overflow-hidden group">
+            
+            <div>
+              <!-- Visual Mockup / Card Banner -->
+              <div class="h-48 bg-gradient-to-br from-slate-900 via-slate-900 to-emerald-950/60 p-5 relative border-b border-slate-800 flex flex-col justify-between">
+                <div class="flex items-center justify-between">
+                  <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-emerald-500/20 border border-emerald-500/30 text-emerald-300 text-xs font-mono">
+                    <i data-lucide="pie-chart" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    15K+ Records
+                  </span>
+                  <div class="flex items-center gap-2">
+                    <button onclick="openProjectModal('project-3')" class="p-2 rounded-lg bg-slate-900/90 text-slate-300 hover:text-white border border-slate-700/80 hover:bg-slate-800 transition-colors" title="Quick View">
+                      <i data-lucide="maximize-2" class="w-4 h-4"></i>
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Abstract UI Representation -->
+                <div class="bg-slate-950/80 border border-slate-800 rounded-xl p-3 shadow-inner">
+                  <div class="flex items-center justify-between text-[11px] font-mono text-slate-400 mb-1.5">
+                    <span>Automated Metric Pipeline</span>
+                    <span class="text-emerald-400 font-semibold">-35% Cycle Time</span>
+                  </div>
+                  <div class="grid grid-cols-4 gap-1 h-3 items-end">
+                    <div class="bg-emerald-600 h-2 rounded-sm"></div>
+                    <div class="bg-emerald-500 h-3 rounded-sm"></div>
+                    <div class="bg-emerald-400 h-2.5 rounded-sm"></div>
+                    <div class="bg-brand-500 h-3 rounded-sm"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Content Area -->
+              <div class="p-6">
+                <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                  Data Analytics &amp; Behavioral Insights Dashboard
+                </h3>
+                
+                <p class="mt-3 text-slate-400 text-sm leading-relaxed">
+                  Automated data cleaning, metric extraction, and interactive visual pipeline for large-scale datasets with dynamic filtering and report generation.
+                </p>
+
+                <!-- Key Feature Highlights -->
+                <div class="mt-4 space-y-1.5 text-xs text-slate-300">
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>Automated outlier detection &amp; imputations</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <i data-lucide="check" class="w-3.5 h-3.5 text-emerald-400"></i>
+                    <span>12+ custom business visualization charts</span>
+                  </div>
+                </div>
+
+                <!-- Tech Tags -->
+                <div class="mt-6 flex flex-wrap gap-1.5">
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-brand-300 border border-slate-800">Python</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-emerald-300 border border-slate-800">NumPy</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-teal-300 border border-slate-800">Matplotlib</span>
+                  <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-amber-300 border border-slate-800">EDA</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Footer Buttons -->
+            <div class="p-6 pt-0 flex items-center gap-3">
+              <a href="https://github.com/kumar-manisk" target="_blank" rel="noopener noreferrer" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-200 bg-slate-900 hover:bg-slate-800 border border-slate-800 hover:border-slate-700 transition-colors">
+                <i data-lucide="github" class="w-4 h-4"></i>
+                <span>View Code</span>
+              </a>
+              <button onclick="openProjectModal('project-3')" class="flex-1 inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold text-white bg-emerald-600 hover:bg-emerald-500 shadow-md shadow-emerald-600/20 transition-colors">
+                <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
+                <span>Details</span>
+              </button>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section id="contact" class="py-16 md:py-24 border-t border-slate-800/80 bg-slate-950/60">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono mb-3">
+            <i data-lucide="mail" class="w-3.5 h-3.5"></i>
+            <span>GET IN TOUCH</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Let's Build Something Exceptional</h2>
+          <p class="mt-3 text-slate-400 text-base sm:text-lg">
+            Whether you have an open engineering role, a consulting project, or a technical inquiry, my inbox is always open.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Contact Info Cards -->
+          <div class="lg:col-span-5 space-y-4">
+            
+            <!-- Email Item -->
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-brand-500/10 text-brand-400 border border-brand-500/20 flex items-center justify-center shrink-0">
+                  <i data-lucide="mail" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block">Direct Email</span>
+                  <a href="mailto:maniskgaurav@gmail.com" class="text-sm sm:text-base font-semibold text-white hover:text-brand-400 transition-colors">
+                    maniskgaurav@gmail.com
+                  </a>
+                </div>
+              </div>
+              <button onclick="copyEmailToClipboard()" class="p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-colors" title="Copy to clipboard">
+                <i data-lucide="copy" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <!-- LinkedIn Item -->
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 flex items-center justify-center shrink-0">
+                  <i data-lucide="linkedin" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block">LinkedIn Profile</span>
+                  <a href="https://linkedin.com/in/kumar-manisk" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-semibold text-white hover:text-indigo-400 transition-colors">
+                    linkedin.com/in/kumar-manisk
+                  </a>
+                </div>
+              </div>
+              <a href="https://linkedin.com/in/kumar-manisk" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- GitHub Item -->
+            <div class="glass-panel p-5 rounded-2xl border border-slate-800 flex items-center justify-between">
+              <div class="flex items-center gap-4">
+                <div class="w-12 h-12 rounded-xl bg-slate-800 text-slate-200 border border-slate-700 flex items-center justify-center shrink-0">
+                  <i data-lucide="github" class="w-6 h-6"></i>
+                </div>
+                <div>
+                  <span class="text-xs font-mono text-slate-400 uppercase tracking-wider block">GitHub Repos</span>
+                  <a href="https://github.com/kumar-manisk" target="_blank" rel="noopener noreferrer" class="text-sm sm:text-base font-semibold text-white hover:text-slate-300 transition-colors">
+                    github.com/kumar-manisk
+                  </a>
+                </div>
+              </div>
+              <a href="https://github.com/kumar-manisk" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-colors">
+                <i data-lucide="external-link" class="w-4 h-4"></i>
+              </a>
+            </div>
+
+            <!-- Response Guarantee Badge -->
+            <div class="p-4 rounded-xl bg-emerald-950/40 border border-emerald-800/40 text-emerald-300 text-xs flex items-center gap-3">
+              <i data-lucide="clock" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+              <span>Guaranteed response within 24 hours. Open to full-time engineering roles &amp; select contracts.</span>
+            </div>
+
+          </div>
+
+          <!-- Interactive Contact Form -->
+          <div class="lg:col-span-7">
+            <div class="glass-panel p-6 sm:p-8 rounded-2xl border border-slate-800">
+              <h3 class="text-xl font-bold text-white mb-2">Send a Message</h3>
+              <p class="text-sm text-slate-400 mb-6">Fill out the form below, and it will route directly to my inbox.</p>
+
+              <form id="contact-form" onsubmit="handleContactSubmit(event)" class="space-y-4">
+                
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <!-- Name Field -->
+                  <div class="space-y-1.5">
+                    <label for="form-name" class="block text-xs font-medium text-slate-300">Your Name *</label>
+                    <input 
+                      type="text" 
+                      id="form-name" 
+                      name="name" 
+                      required 
+                      placeholder="e.g. Alex Morgan" 
+                      class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+                    />
+                  </div>
+
+                  <!-- Email Field -->
+                  <div class="space-y-1.5">
+                    <label for="form-email" class="block text-xs font-medium text-slate-300">Email Address *</label>
+                    <input 
+                      type="email" 
+                      id="form-email" 
+                      name="email" 
+                      required 
+                      placeholder="alex@company.com" 
+                      class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+                    />
+                  </div>
+                </div>
+
+                <!-- Subject Field -->
+                <div class="space-y-1.5">
+                  <label for="form-subject" class="block text-xs font-medium text-slate-300">Subject / Inquiry *</label>
+                  <input 
+                    type="text" 
+                    id="form-subject" 
+                    name="subject" 
+                    required 
+                    placeholder="e.g. Full-Stack Developer Opportunity / Project Inquiry" 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all"
+                  />
+                </div>
+
+                <!-- Message Field -->
+                <div class="space-y-1.5">
+                  <label for="form-message" class="block text-xs font-medium text-slate-300">Message *</label>
+                  <textarea 
+                    id="form-message" 
+                    name="message" 
+                    rows="4" 
+                    required 
+                    placeholder="Share details about the role, tech stack, or project requirements..." 
+                    class="w-full px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-800 text-sm text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-transparent transition-all resize-none"
+                  ></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button 
+                  type="submit" 
+                  id="form-submit-btn" 
+                  class="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-semibold text-sm text-white bg-brand-600 hover:bg-brand-500 shadow-lg shadow-brand-600/30 hover:shadow-brand-600/40 transition-all focus:outline-none focus:ring-2 focus:ring-brand-400"
+                >
+                  <i data-lucide="send" class="w-4 h-4"></i>
+                  <span id="form-btn-text">Transmit Message</span>
+                </button>
+              </form>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="border-t border-slate-800 bg-slate-950 py-12 relative z-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        
+        <!-- Branding & Copyright -->
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-mono font-bold text-sm">
+            &lt;KM/&gt;
+          </div>
+          <div>
+            <div class="text-sm font-semibold text-white">Kumar Manisk Gaurav</div>
+            <div class="text-xs text-slate-500 font-mono">Software Developer · AI &amp; Full-Stack</div>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+          <a href="#about" class="hover:text-white transition-colors">About</a>
+          <a href="#skills" class="hover:text-white transition-colors">Skills</a>
+          <a href="#experience" class="hover:text-white transition-colors">Experience</a>
+          <a href="#projects" class="hover:text-white transition-colors">Projects</a>
+          <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+        </div>
+
+        <!-- Back To Top & Socials -->
+        <div class="flex items-center gap-4">
+          <a href="https://github.com/kumar-manisk" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-colors" aria-label="GitHub">
+            <i data-lucide="github" class="w-4 h-4"></i>
+          </a>
+          <a href="https://linkedin.com/in/kumar-manisk" target="_blank" rel="noopener noreferrer" class="p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-colors" aria-label="LinkedIn">
+            <i data-lucide="linkedin" class="w-4 h-4"></i>
+          </a>
+          <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="p-2 rounded-lg bg-brand-600/20 text-brand-400 hover:bg-brand-600 hover:text-white border border-brand-500/30 transition-all" title="Back to Top" aria-label="Back to Top">
+            <i data-lucide="arrow-up" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-900 text-center text-xs text-slate-500">
+        &copy; 2026 Kumar Manisk Gaurav. Built for performance, high throughput, and modern web standards.
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==================== RESUME MODAL ==================== -->
+  <div id="resume-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+    <div class="glass-panel w-full max-w-2xl rounded-2xl border border-slate-700 shadow-2xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300" id="resume-modal-card">
+      
+      <!-- Modal Close Button -->
+      <button onclick="closeResumeModal()" class="absolute top-4 right-4 p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-colors" aria-label="Close Modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <!-- Modal Header -->
+      <div class="flex items-center gap-3 mb-6 pb-4 border-b border-slate-800">
+        <div class="w-10 h-10 rounded-xl bg-brand-600/20 border border-brand-500/30 text-brand-400 flex items-center justify-center">
+          <i data-lucide="file-text" class="w-5 h-5"></i>
+        </div>
+        <div>
+          <h3 class="text-xl font-bold text-white">Kumar Manisk Gaurav — Curriculum Vitae</h3>
+          <p class="text-xs text-slate-400 font-mono">Software Developer | AI &amp; Full-Stack Enthusiast</p>
+        </div>
+      </div>
+
+      <!-- Quick Resume Summary View -->
+      <div class="space-y-4 text-xs sm:text-sm text-slate-300">
+        <div class="p-4 rounded-xl bg-slate-900/90 border border-slate-800">
+          <span class="font-bold text-white block mb-1">Executive Summary</span>
+          <p class="text-slate-400 leading-relaxed">
+            Software Developer skilled in Python, Java, JavaScript, and React.js with hands-on experience developing low-latency APIs (&lt;180ms) and AI recommendation pipelines (88% relevance).
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+            <span class="text-brand-400 font-semibold block">Experience</span>
+            <span class="text-white text-xs">TechnoHacks Solutions (Jun 2026 - Jul 2026)</span><br/>
+            <span class="text-white text-xs">Mood Indigo IIT Bombay (Jan 2024 - Feb 2024)</span>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-900/60 border border-slate-800">
+            <span class="text-indigo-400 font-semibold block">Core Competencies</span>
+            <span class="text-white text-xs">Full-Stack, REST APIs, ML Systems, DSA, OOP</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons inside modal -->
+      <div class="mt-6 pt-4 border-t border-slate-800 flex flex-wrap gap-3 items-center justify-end">
+        <button onclick="closeResumeModal()" class="px-4 py-2.5 rounded-xl text-xs font-semibold text-slate-300 bg-slate-900 hover:bg-slate-800 border border-slate-800">
+          Close
+        </button>
+        <button onclick="downloadResumeFile()" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-xs font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-md shadow-brand-600/30 transition-all">
+          <i data-lucide="download" class="w-4 h-4"></i>
+          <span>Download PDF / Text CV</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ==================== PROJECT DETAILS MODAL ==================== -->
+  <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md hidden opacity-0 transition-opacity duration-300">
+    <div class="glass-panel w-full max-w-2xl rounded-2xl border border-slate-700 shadow-2xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto transform scale-95 transition-transform duration-300" id="project-modal-card">
+      
+      <!-- Close Button -->
+      <button onclick="closeProjectModal()" class="absolute top-4 right-4 p-2 rounded-lg bg-slate-900 text-slate-400 hover:text-white border border-slate-800 transition-colors" aria-label="Close Modal">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div id="project-modal-content">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+  <script>
+    // Initialize Lucide Icons
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      initScrollSpy();
+    });
+
+    // Mobile Navigation Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+      mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+      mobileMenu.classList.toggle('hidden');
+      menuIcon.classList.toggle('hidden');
+      closeIcon.classList.toggle('hidden');
+    });
+
+    // Close mobile menu on clicking any nav link
+    document.querySelectorAll('.mobile-nav-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Skills Category Filter Logic
+    function filterSkills(category) {
+      const buttons = document.querySelectorAll('.skill-tab-btn');
+      buttons.forEach(btn => {
+        if (btn.dataset.category === category) {
+          btn.className = 'skill-tab-btn active px-4 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all bg-brand-600 text-white shadow-md shadow-brand-600/20';
+        } else {
+          btn.className = 'skill-tab-btn px-4 py-2 text-xs sm:text-sm font-medium rounded-lg text-slate-400 hover:text-white bg-slate-900/80 hover:bg-slate-800 border border-slate-800 transition-all';
+        }
+      });
+
+      const cards = document.querySelectorAll('.skill-category-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.dataset.cat === category) {
+          card.style.display = 'block';
+          card.style.opacity = '0';
+          setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transition = 'opacity 0.3s ease';
+          }, 50);
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    // Scroll Spy for Active Navigation
+    function initScrollSpy() {
+      const sections = document.querySelectorAll('section[id]');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollPosition = window.pageYOffset + 200;
+
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+            current = section.getAttribute('id');
+          }
+        });
+
+        navLinks.forEach(link => {
+          link.classList.remove('text-brand-400', 'bg-slate-800/80');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('text-brand-400', 'bg-slate-800/80');
+          }
+        });
+      });
+    }
+
+    // Toast Notification Utility
+    function showToast(message, type = 'success') {
+      const container = document.getElementById('toast-container');
+      const toast = document.createElement('div');
+      
+      const isSuccess = type === 'success';
+      const icon = isSuccess ? 'check-circle' : 'info';
+      const borderColor = isSuccess ? 'border-emerald-500/40' : 'border-brand-500/40';
+      const iconColor = isSuccess ? 'text-emerald-400' : 'text-brand-400';
+
+      toast.className = `pointer-events-auto flex items-center gap-3 p-4 rounded-xl bg-slate-900/95 border ${borderColor} text-white shadow-2xl backdrop-blur-lg transform transition-all duration-300 translate-y-4 opacity-0`;
+      toast.innerHTML = `
+        <i data-lucide="${icon}" class="w-5 h-5 ${iconColor} shrink-0"></i>
+        <div class="text-xs sm:text-sm font-medium">${message}</div>
+      `;
+
+      container.appendChild(toast);
+      lucide.createIcons();
+
+      // Trigger transition
+      setTimeout(() => {
+        toast.classList.remove('translate-y-4', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+      }, 10);
+
+      // Auto dismiss after 3.5 seconds
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3500);
+    }
+
+    // Copy Email to Clipboard
+    function copyEmailToClipboard() {
+      const email = 'maniskgaurav@gmail.com';
+      navigator.clipboard.writeText(email).then(() => {
+        showToast('Email "maniskgaurav@gmail.com" copied to clipboard!', 'success');
+        const copyTextEl = document.getElementById('copy-email-text');
+        if (copyTextEl) {
+          copyTextEl.innerText = 'Copied!';
+          setTimeout(() => {
+            copyTextEl.innerText = 'Copy Email';
+          }, 2000);
+        }
+      }).catch(() => {
+        showToast('Direct email: maniskgaurav@gmail.com', 'info');
+      });
+    }
+
+    // Demo Live Toast
+    function triggerDemoToast(projectName) {
+      showToast(`Launching live sandbox simulation for ${projectName}...`, 'info');
+    }
+
+    // Contact Form Submission Handler
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const submitBtn = document.getElementById('form-submit-btn');
+      const btnText = document.getElementById('form-btn-text');
+      
+      // Loading State
+      submitBtn.disabled = true;
+      btnText.innerText = 'Transmitting...';
+
+      setTimeout(() => {
+        showToast('Message transmitted successfully! Kumar will respond within 24 hours.', 'success');
+        document.getElementById('contact-form').reset();
+        submitBtn.disabled = false;
+        btnText.innerText = 'Transmit Message';
+      }, 1000);
+    }
+
+    // Resume Modal Logic
+    const resumeModal = document.getElementById('resume-modal');
+    const resumeCard = document.getElementById('resume-modal-card');
+
+    function openResumeModal() {
+      resumeModal.classList.remove('hidden');
+      setTimeout(() => {
+        resumeModal.classList.remove('opacity-0');
+        resumeCard.classList.remove('scale-95');
+        resumeCard.classList.add('scale-100');
+      }, 10);
+    }
+
+    function closeResumeModal() {
+      resumeModal.classList.add('opacity-0');
+      resumeCard.classList.remove('scale-100');
+      resumeCard.classList.add('scale-95');
+      setTimeout(() => {
+        resumeModal.classList.add('hidden');
+      }, 300);
+    }
+
+    // Download Resume action
+    function downloadResumeFile() {
+      const resumeContent = `=====================================================
+KUMAR MANISK GAURAV
+Software Developer | AI & Full-Stack Enthusiast
+Email: maniskgaurav@gmail.com
+LinkedIn: linkedin.com/in/kumar-manisk
+GitHub: github.com/kumar-manisk
+=====================================================
+
+PROFESSIONAL SUMMARY
+Dynamic Software Developer with solid foundation in Python, Java, JavaScript (ES6+), React.js, and Machine Learning algorithms. Proven success architecting scalable REST APIs (<180ms response time), recommendation systems (88% precision), and automating analytics across 15,000+ data records.
+
+EXPERIENCE
+1. TechnoHacks Solutions Pvt. Ltd. (Jun 2026 – Jul 2026)
+   Role: Data Analytics Intern
+   - Processed 15,000+ records with automated cleaning pipelines.
+   - Built 12+ visualization dashboards cutting reporting cycles by 35%.
+   - Tech: Python, Pandas, NumPy, Matplotlib, EDA.
+
+2. Mood Indigo, IIT Bombay (Jan 2024 – Feb 2024)
+   Role: AI & Strategy Intern (Team Lead)
+   - Developed AI recommendation engine for event matching with 88% relevance.
+   - Analyzed 45,000+ attendee behaviors to boost participant engagement by 24%.
+   - Tech: Scikit-learn, Collaborative Filtering, User Behavior Modeling.
+
+FEATURED PROJECTS
+- E-Commerce Price Tracker & Alert System: Full-stack price monitoring engine with real-time web scrapers, REST API, React UI, <180ms latency.
+- AI Movie Recommendation System: Machine learning recommendation engine utilizing collaborative filtering and matrix factorization.
+- Data Analytics & Behavioral Insights Dashboard: Automated data cleaning and interactive visual pipeline for large-scale datasets.
+
+TECHNICAL SKILLS
+- Languages: Python, Java, JavaScript (ES6+), SQL, C/C++
+- Web & Backend: React.js, RESTful APIs, Node.js, HTML5/CSS3, Microservices
+- AI & Analytics: Recommendation Systems, Applied Behavior Analysis, Pandas, NumPy, Matplotlib, Scikit-learn
+- Tools & Core: Git, GitHub, MySQL, SQLite, Postman, DSA, SDLC, OOP
+=====================================================`;
+
+      const blob = new Blob([resumeContent], { type: 'text/plain;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Kumar_Manisk_Gaurav_Resume.txt';
+      link.click();
+      showToast('Resume downloaded successfully!', 'success');
+      closeResumeModal();
+    }
+
+    // Project Details Data & Modal Logic
+    const projectsData = {
+      'project-1': {
+        title: 'E-Commerce Price Tracker & Automated Alert System',
+        badge: 'Full-Stack & Scraping Daemon',
+        description: 'A complete end-to-end monitoring engine designed to scrape high-frequency price shifts across major e-commerce platforms, storing historical fluctuations in SQLite and broadcasting instantaneous alerts.',
+        metrics: ['< 180ms REST API response', 'Multi-threaded background scrapers', 'Real-time threshold triggers'],
+        stack: ['Python', 'React.js', 'REST API', 'SQLite', 'BeautifulSoup', 'Cron Jobs'],
+        architecture: 'Decoupled architecture featuring a lightweight Python background worker that polls external storefront endpoints with exponential backoff. Exposes clean JSON REST endpoints consumed by a snappy React dashboard.',
+        github: 'https://github.com/kumar-manisk'
+      },
+      'project-2': {
+        title: 'AI Movie Recommendation System',
+        badge: 'Machine Learning & Behavioral Analysis',
+        description: 'Engineered during Mood Indigo IIT Bombay to model attendee preferences. Implements collaborative filtering and cosine similarity matrix calculations across user clusters.',
+        metrics: ['88% precision score on validation set', 'Real-time vector calculations', 'Trained on 45,000+ behavioral patterns'],
+        stack: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Collaborative Filtering'],
+        architecture: 'Uses matrix factorization and k-nearest neighbors (k-NN) to compute similarity scores between latent user feature vectors and movie item embeddings.',
+        github: 'https://github.com/kumar-manisk'
+      },
+      'project-3': {
+        title: 'Data Analytics & Behavioral Insights Dashboard',
+        badge: 'Analytics & Pipeline Automation',
+        description: 'Automated end-to-end exploratory data analysis pipeline that cleanses raw operational logs, extracts key statistical distributions, and generates 12+ interactive visual reports.',
+        metrics: ['15,000+ data points cleansed', '35% reduction in reporting overhead', 'Automated anomaly detection'],
+        stack: ['Python', 'Pandas', 'NumPy', 'Matplotlib', 'Exploratory Data Analysis'],
+        architecture: 'Modular pipeline processing raw CSV/SQL streams through outlier detection, normalization, and statistical aggregation routines with customizable chart generation.',
+        github: 'https://github.com/kumar-manisk'
+      }
+    };
+
+    const projectModal = document.getElementById('project-modal');
+    const projectCard = document.getElementById('project-modal-card');
+    const projectContent = document.getElementById('project-modal-content');
+
+    function openProjectModal(projectId) {
+      const data = projectsData[projectId];
+      if (!data) return;
+
+      projectContent.innerHTML = `
+        <div class="mb-4">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-mono font-semibold bg-brand-950/80 text-brand-400 border border-brand-800/60 mb-2">
+            ${data.badge}
+          </span>
+          <h3 class="text-2xl font-bold text-white">${data.title}</h3>
+        </div>
+
+        <p class="text-sm text-slate-300 leading-relaxed mb-6">
+          ${data.description}
+        </p>
+
+        <div class="space-y-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-white font-semibold block mb-2">Key Performance Benchmarks</span>
+            <ul class="space-y-1.5 text-slate-300">
+              ${data.metrics.map(m => `<li class="flex items-center gap-2"><i data-lucide="check-circle-2" class="w-4 h-4 text-emerald-400"></i><span>${m}</span></li>`).join('')}
+            </ul>
+          </div>
+
+          <div class="p-4 rounded-xl bg-slate-900/80 border border-slate-800">
+            <span class="text-white font-semibold block mb-2">Architecture & Implementation</span>
+            <p class="text-slate-400 leading-relaxed text-xs sm:text-sm">
+              ${data.architecture}
+            </p>
+          </div>
+
+          <div>
+            <span class="text-xs font-mono text-slate-400 block mb-2">Tech Stack:</span>
+            <div class="flex flex-wrap gap-1.5">
+              ${data.stack.map(s => `<span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-900 text-brand-300 border border-slate-800">${s}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-6 pt-4 border-t border-slate-800 flex items-center justify-end gap-3">
+          <button onclick="closeProjectModal()" class="px-4 py-2 rounded-xl text-xs font-semibold text-slate-300 bg-slate-900 hover:bg-slate-800 border border-slate-800">
+            Close
+          </button>
+          <a href="${data.github}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2 rounded-xl text-xs font-semibold text-white bg-brand-600 hover:bg-brand-500 shadow-md shadow-brand-600/30 transition-all">
+            <i data-lucide="github" class="w-4 h-4"></i>
+            <span>Inspect Repository</span>
+          </a>
+        </div>
+      `;
+
+      projectModal.classList.remove('hidden');
+      lucide.createIcons();
+      setTimeout(() => {
+        projectModal.classList.remove('opacity-0');
+        projectCard.classList.remove('scale-95');
+        projectCard.classList.add('scale-100');
+      }, 10);
+    }
+
+    function closeProjectModal() {
+      projectModal.classList.add('opacity-0');
+      projectCard.classList.remove('scale-100');
+      projectCard.classList.add('scale-95');
+      setTimeout(() => {
+        projectModal.classList.add('hidden');
+      }, 300);
+    }
+
+    // Close modals on clicking backdrop
+    window.addEventListener('click', (e) => {
+      if (e.target === resumeModal) closeResumeModal();
+      if (e.target === projectModal) closeProjectModal();
+    });
+
+    // Close modals with Escape key
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeResumeModal();
+        closeProjectModal();
+      }
+    });
+  </script>
+</body>
+</html>
