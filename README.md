@@ -2,7 +2,7 @@
 
 Personal portfolio and landing page for **Kumar Manisk Gaurav**, Software Developer specializing in scalable web platforms, high-throughput REST APIs, and intelligent data systems.
 
-🔗 **Live Portfolio:** [https://kmanisk.github.io/portfolio](https://kmanisk.github.io/portfolio) (or via GitHub Pages / Vercel / Netlify)
+🔗 **Live Portfolio:** [https://kmanisk.github.io/portfolio](https://kmanisk.github.io/portfolio)
 
 ---
 
